@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'task2.apps.Task2Config'
 ]
 
 MIDDLEWARE = [
@@ -51,10 +52,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'UrbanDjango.urls'
 
+# BASE_DIR / 'UrbanDjango/templates', <-- новое
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / 'UrbanDjango/templates/second_task',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
