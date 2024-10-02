@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+</head>
+<body>
+    {% if orders_cnt %}
+    <h1>Корзина</h1>
+    <h2>Заказы: {{ orders_cnt }}</h2>
+
+    <ul>
+        {% for order in orders %}
+        <li><h3>{{ order.0 }}. Состояние: {{ order.2 }}.&nbsp;&nbsp;Цена: {{ order.1 }}. р</h3></li>
+        {% endfor %}
+    </ul>
+
+    <div style="text-indent: 20px;">
+    <p>Сумма заказа к оплате: {{ total }} р</p>
+    <p>
+        <button style="font-size: 20px;">Оплатить</button>
+        <button style="font-size: 20px;" onclick="window.location='{% url 'task3:platform_view' %}'" >
+            Вернуться обратно
+        </button>
+    </p>
+    </div>
+    {% else %}
+
+    <h1>В вашей корзине пока что нет заказов.</h1>
+    <div style="text-indent: 20px;">
+    <p>
+        <button style="font-size: 20px;" onclick="window.location='{% url 'task3:platform_view' %}'" >
+            Вернуться обратно
+        </button>
+    </p>
+    </div>
+    {% endif %}
+
+</body>
+</html>

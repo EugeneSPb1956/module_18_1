@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Games List</title>
+</head>
+<body>
+    <h1>Некоторые игры 1990-2000</h1>
+
+    <ul style="list-style-type:none;">
+        {% for item in items %}
+        <li><h2><a href={{ item.0 }} title='Инфо'>{{ item.1 }}</a>&nbsp;&nbsp;<button>Купить</button></h2></li>
+        {% endfor %}
+    </ul>
+
+    <p style="text-indent: 100px;">
+        <button style="font-size: 20px;" onclick="window.location='{% url 'task3:platform_view' %}'" >
+            Вернуться обратно
+        </button>
+    </p>
+</body>
+</html>
